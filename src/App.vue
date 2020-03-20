@@ -29,13 +29,14 @@
 <script>
 import PictureInput from "vue-picture-input";
 import axios from "axios";
+import { config } from "./config";
 
 export default {
   name: "app",
   data() {
     return {
       gCloudVisionUrl:
-        "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAZ_aZRciI2f8DkrL9YgrJtucoNQ9PnbCA",
+        "https://vision.googleapis.com/v1/images:annotate?key=" + config.apiKey,
       hashtags: ""
     };
   },
