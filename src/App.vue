@@ -50,7 +50,7 @@ export default {
           /^data:image\/(png|jpg|jpeg);base64,/,
           ""
         );
-        console.log(image);
+        //console.log(image);
         let requestBody = {
           requests: [
             {
