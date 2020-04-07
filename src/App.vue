@@ -21,7 +21,7 @@
     <p :data="hashtags">{{ hashtags }}</p>
     <!-- <a
       href="https://github.com/alessiomaffeis/vue-picture-input"
-      class="btn btn-success"
+      class="btn btn-success" 
     >View project on GitHub</a>-->
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
           /^data:image\/(png|jpg|jpeg);base64,/,
           ""
         );
-        console.log(image);
+        //console.log(image);
         let requestBody = {
           requests: [
             {
@@ -60,7 +60,7 @@ export default {
               features: [
                 {
                   type: "LABEL_DETECTION",
-                  maxResults: 10
+                  maxResults: 20
                 }
               ]
             }
@@ -77,7 +77,8 @@ export default {
         );
         this.hashtags = "";
         for (var i = 0; i !== allLabelDescriptions.length; ++i) {
-          this.hashtags += "#" + allLabelDescriptions[i] + " ";
+          this.hashtags +=
+            "#" + allLabelDescriptions[i].replace(/\s+/g, "") + " ";
         }
         console.log(allLabelDescriptions);
       }
